@@ -1,105 +1,105 @@
+let sustentabilidade = 0;
+
+function mostrarMensagem(){
+
+alert(
+"🌱 AgroForte acredita que produção e preservação podem caminhar juntas!"
+);
+
+}
+
+function adicionarPontos(valor){
+
+sustentabilidade += valor;
+
+if(sustentabilidade > 100){
+sustentabilidade = 100;
+}
+
+document.getElementById("progresso").style.width =
+sustentabilidade + "%";
+
+document.getElementById("nivel").innerHTML =
+"Sustentabilidade: " +
+sustentabilidade +
+"%";
+
+}
+
 const curiosidades = [
-    "🌎 Cerca de 95% dos alimentos dependem do solo para serem produzidos.",
-    "💧 A irrigação eficiente pode economizar até 50% da água utilizada.",
-    "🐝 Mais de 70% das culturas agrícolas dependem de polinizadores.",
-    "🌱 O plantio direto ajuda a armazenar carbono no solo.",
-    "☀ Fazendas solares estão crescendo em áreas rurais do mundo todo."
+
+"🌎 95% dos alimentos dependem diretamente do solo.",
+
+"🐝 Mais de 70% das culturas agrícolas dependem de polinizadores.",
+
+"💧 Sistemas modernos podem economizar até metade da água usada.",
+
+"🌱 O plantio direto reduz erosão e aumenta a matéria orgânica.",
+
+"☀ Energia solar está crescendo rapidamente no campo."
+
 ];
 
-function novaCuriosidade() {
+function novaCuriosidade(){
 
-    const aleatoria =
-        curiosidades[
-            Math.floor(
-                Math.random() * curiosidades.length
-            )
-        ];
+let aleatoria =
+curiosidades[Math.floor(Math.random()*curiosidades.length)];
 
-    document.getElementById("curiosidade").innerHTML =
-        aleatoria;
+document.getElementById("curiosidade").innerHTML =
+aleatoria;
+
 }
 
-function corrigirQuiz() {
+function corrigirQuiz(){
 
-    const resposta =
-        document.querySelector(
-            'input[name="quiz"]:checked'
-        );
+let resposta =
+document.querySelector(
+'input[name="quiz"]:checked'
+);
 
-    if (!resposta) {
+if(!resposta){
 
-        document.getElementById("resultadoQuiz")
-            .innerHTML =
-            "Escolha uma alternativa!";
+document.getElementById("resultado").innerHTML =
+"Escolha uma opção.";
 
-        return;
-    }
-
-    if (resposta.value === "1") {
-
-        document.getElementById("resultadoQuiz")
-            .innerHTML =
-            "✅ Correto! O plantio direto reduz a erosão.";
-
-    } else {
-
-        document.getElementById("resultadoQuiz")
-            .innerHTML =
-            "❌ Resposta incorreta.";
-    }
+return;
 }
 
-function simular() {
+if(resposta.value === "1"){
 
-    const barra =
-        document.getElementById("barra");
+document.getElementById("resultado").innerHTML =
+"✅ Correto!";
 
-    const texto =
-        document.getElementById("textoSimulacao");
+}else{
 
-    let progresso = 0;
-
-    barra.style.width = "0%";
-
-    const intervalo = setInterval(() => {
-
-        progresso += 5;
-
-        barra.style.width =
-            progresso + "%";
-
-        texto.innerHTML =
-            "Sustentabilidade da fazenda: " +
-            progresso +
-            "%";
-
-        if (progresso >= 100) {
-
-            clearInterval(intervalo);
-
-            texto.innerHTML =
-                "🌱 Fazenda sustentável alcançada com sucesso!";
-        }
-
-    }, 100);
+document.getElementById("resultado").innerHTML =
+"❌ Resposta incorreta.";
 }
 
-const visitantes =
-    Math.floor(Math.random() * 90000) + 10000;
-
-document.getElementById("contador").innerHTML =
-    visitantes.toLocaleString("pt-BR");
-    header{
-    background:#ffd600;
-    border-bottom:8px solid #000;
-    text-align:center;
-    padding:30px;
 }
 
-header h1{
-    font-size:2rem;
-    color:#006400;
+function animarContador(id, maximo){
 
-    text-shadow:
-    4px 4px 0 #000;
+let valor = 0;
+
+let intervalo = setInterval(()=>{
+
+valor += Math.ceil(maximo/100);
+
+if(valor >= maximo){
+
+valor = maximo;
+
+clearInterval(intervalo);
 }
+
+document.getElementById(id).innerHTML =
+valor.toLocaleString();
+
+},20);
+
+}
+
+animarContador("agua",50000);
+animarContador("carbono",12000);
+animarContador("arvores",3500);
