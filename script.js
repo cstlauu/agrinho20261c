@@ -1,50 +1,105 @@
-let xp = 0;
+let sustentabilidade = 0;
 
-function atualizar(){
-    document.getElementById("xp").style.width = xp + "%";
+function mostrarMensagem(){
+
+alert(
+"🌱 AgroForte acredita que produção e preservação podem caminhar juntas!"
+);
+
 }
 
-function plantar(){
-    xp += 10;
-    if(xp > 100) xp = 100;
-    atualizar();
+function adicionarPontos(valor){
+
+sustentabilidade += valor;
+
+if(sustentabilidade > 100){
+sustentabilidade = 100;
 }
 
-function regar(){
-    xp += 15;
-    if(xp > 100) xp = 100;
-    atualizar();
+document.getElementById("progresso").style.width =
+sustentabilidade + "%";
+
+document.getElementById("nivel").innerHTML =
+"Sustentabilidade: " +
+sustentabilidade +
+"%";
+
 }
 
-function energia(){
-    xp += 20;
-    if(xp > 100) xp = 100;
-    atualizar();
-}
+const curiosidades = [
 
-function curiosidade(){
+"🌎 95% dos alimentos dependem diretamente do solo.",
 
-const lista = [
-"🌱 Solo saudável aumenta produtividade em até 40%",
-"🐝 Abelhas são essenciais para agricultura",
-"💧 Irrigação inteligente economiza água",
-"🌎 Agricultura sustentável reduz CO₂",
-"🚜 Fazendas modernas usam sensores"
+"🐝 Mais de 70% das culturas agrícolas dependem de polinizadores.",
+
+"💧 Sistemas modernos podem economizar até metade da água usada.",
+
+"🌱 O plantio direto reduz erosão e aumenta a matéria orgânica.",
+
+"☀ Energia solar está crescendo rapidamente no campo."
+
 ];
 
-document.getElementById("textoCuriosidade").innerHTML =
-lista[Math.floor(Math.random()*lista.length)];
+function novaCuriosidade(){
+
+let aleatoria =
+curiosidades[Math.floor(Math.random()*curiosidades.length)];
+
+document.getElementById("curiosidade").innerHTML =
+aleatoria;
 
 }
 
-function responder(correto){
+function corrigirQuiz(){
 
-if(correto){
-    document.getElementById("resultado").innerHTML =
-    "✅ Correto! Você protegeu o solo!";
+let resposta =
+document.querySelector(
+'input[name="quiz"]:checked'
+);
+
+if(!resposta){
+
+document.getElementById("resultado").innerHTML =
+"Escolha uma opção.";
+
+return;
+}
+
+if(resposta.value === "1"){
+
+document.getElementById("resultado").innerHTML =
+"✅ Correto!";
+
 }else{
-    document.getElementById("resultado").innerHTML =
-    "❌ Errado! Isso prejudica o meio ambiente.";
+
+document.getElementById("resultado").innerHTML =
+"❌ Resposta incorreta.";
 }
 
 }
+
+function animarContador(id, maximo){
+
+let valor = 0;
+
+let intervalo = setInterval(()=>{
+
+valor += Math.ceil(maximo/100);
+
+if(valor >= maximo){
+
+valor = maximo;
+
+clearInterval(intervalo);
+}
+
+document.getElementById(id).innerHTML =
+valor.toLocaleString();
+
+},20);
+
+}
+
+animarContador("agua",50000);
+animarContador("carbono",12000);
+animarContador("arvores",3500);
