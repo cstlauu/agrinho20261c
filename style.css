@@ -1,200 +1,306 @@
+/* ===== PIXEL AGROFORTE THEME ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Verdana, Arial, sans-serif;
+}
+
+html{
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(
-        45deg,
-        #008000,
-        #00cc66,
-        #66ff66,
-        #99ff99
+    font-family:'Press Start 2P', cursive;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        #4CAF50 0px,
+        #4CAF50 32px,
+        #43A047 32px,
+        #43A047 64px
     );
-    background-size:400% 400%;
-    animation:bgMove 10s infinite alternate;
-    color:#000;
+
+    color:#222;
+    min-height:100vh;
+    padding:20px;
 }
 
-@keyframes bgMove{
-    from{
-        background-position:left;
-    }
-    to{
-        background-position:right;
-    }
-}
+/* ===== CABEÇALHO ===== */
 
 header{
-    background:linear-gradient(to right,#ffcc00,#ff6600);
-    padding:20px;
+    background:#FFD54F;
+
+    border:6px solid #000;
+
+    box-shadow:
+    8px 0 0 #000,
+    0 8px 0 #000,
+    8px 8px 0 #000;
+
     text-align:center;
-    border-bottom:5px ridge #fff;
+    padding:30px;
+    margin-bottom:30px;
 }
 
 header h1{
-    font-size:3em;
-    color:#003300;
-    text-shadow:3px 3px yellow;
+    font-size:2rem;
+    color:#2E7D32;
+
+    text-shadow:
+    4px 4px 0 #000;
 }
 
-.marquee{
-    background:#000080;
-    color:white;
-    padding:10px;
-    overflow:hidden;
-    white-space:nowrap;
+header p{
+    margin-top:15px;
+    font-size:0.7rem;
 }
 
-.marquee span{
-    display:inline-block;
-    padding-left:100%;
-    animation:scroll 15s linear infinite;
-}
-
-@keyframes scroll{
-    from{
-        transform:translateX(0);
-    }
-    to{
-        transform:translateX(-100%);
-    }
-}
-
-.container{
-    width:95%;
-    margin:auto;
-    padding:20px;
-}
+/* ===== CAIXAS ===== */
 
 .box{
-    background:white;
-    border:5px outset #ccc;
-    margin-bottom:20px;
-    padding:20px;
-    box-shadow:5px 5px 10px rgba(0,0,0,.3);
+    background:#FFF8DC;
+
+    border:5px solid #000;
+
+    box-shadow:
+    6px 0 0 #000,
+    0 6px 0 #000,
+    6px 6px 0 #000;
+
+    padding:25px;
+    margin-bottom:30px;
 }
 
 .box h2{
-    background:#006600;
+    background:#2E7D32;
     color:white;
-    padding:10px;
-    margin-bottom:15px;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    border:3px solid #000;
 }
+
+/* ===== GRID ===== */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
 .card{
-    background:#ffffcc;
-    border:3px solid #006600;
-    padding:15px;
-    transition:.3s;
+    background:#C5E1A5;
+
+    border:4px solid #000;
+
+    padding:20px;
+
+    transition:.2s;
 }
 
 .card:hover{
-    transform:scale(1.05);
-    background:#ccffcc;
+
+    transform:
+    translate(-4px,-4px);
+
+    box-shadow:
+    4px 4px 0 #000;
 }
 
+.card h3{
+    margin-bottom:15px;
+}
+
+/* ===== BOTÕES ===== */
+
 button{
-    background:#ff6600;
+    font-family:'Press Start 2P', cursive;
+
+    background:#FF9800;
     color:white;
+
     border:none;
-    padding:12px 20px;
+
+    padding:15px 20px;
+
     cursor:pointer;
-    font-weight:bold;
+
+    box-shadow:
+    4px 0 #000,
+    0 4px #000,
+    4px 4px #000;
 }
 
 button:hover{
-    background:#cc3300;
+    background:#F57C00;
 }
+
+button:active{
+
+    transform:
+    translate(4px,4px);
+
+    box-shadow:none;
+}
+
+/* ===== PROGRESS BAR ===== */
+
+.progress{
+    margin-top:20px;
+
+    border:4px solid #000;
+
+    background:white;
+
+    height:35px;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #00C853 0px,
+        #00C853 10px,
+        #00E676 10px,
+        #00E676 20px
+    );
+
+    transition:1s;
+}
+
+/* ===== CURIOSIDADE ===== */
+
+.fact{
+    background:#E8F5E9;
+
+    border:4px solid #000;
+
+    padding:20px;
+}
+
+/* ===== QUIZ ===== */
+
+.resultado{
+    margin-top:15px;
+    color:#2E7D32;
+}
+
+/* ===== GRÁFICO ===== */
 
 .chart{
     display:flex;
     align-items:flex-end;
     gap:20px;
+
     height:250px;
 }
 
 .bar{
     flex:1;
-    background:linear-gradient(
-        to top,
-        #006600,
-        #66ff66
+
+    background:
+    repeating-linear-gradient(
+        180deg,
+        #66BB6A 0px,
+        #66BB6A 10px,
+        #43A047 10px,
+        #43A047 20px
     );
-    color:white;
-    font-weight:bold;
+
+    border:3px solid #000;
+
     display:flex;
     justify-content:center;
     align-items:flex-end;
-    padding-bottom:5px;
+
+    padding-bottom:10px;
+
+    color:white;
 }
 
-.progress{
-    background:#ddd;
-    height:30px;
-    margin-top:15px;
-}
-
-.progress-bar{
-    height:100%;
-    width:0;
-    background:limegreen;
-    transition:1s;
-}
-
-.fact{
-    padding:15px;
-    background:#eaffea;
-    border-left:5px solid green;
-}
-
-.resultado{
-    margin-top:10px;
-    font-weight:bold;
-}
+/* ===== CONTADOR ===== */
 
 .counter{
-    font-size:1.6rem;
-    color:red;
-    font-weight:bold;
+    font-size:1.3rem;
+    color:#D50000;
 }
 
-.badge{
-    background:red;
-    color:white;
-    padding:5px 10px;
-    border-radius:5px;
+/* ===== LISTAS ===== */
+
+ul{
+    padding-left:30px;
 }
+
+li{
+    margin:12px 0;
+}
+
+/* ===== RODAPÉ ===== */
+
+footer{
+    background:#5D4037;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    border:5px solid #000;
+
+    box-shadow:
+    6px 0 0 #000,
+    0 6px 0 #000,
+    6px 6px 0 #000;
+}
+
+/* ===== EFEITO PISCANDO ===== */
 
 .blink{
-    animation:blink 1s infinite;
+    animation:piscar 1s infinite;
 }
 
-@keyframes blink{
+@keyframes piscar{
     50%{
         opacity:0;
     }
 }
 
-footer{
-    background:#003300;
+/* ===== BADGE ===== */
+
+.badge{
+    background:#D50000;
     color:white;
-    text-align:center;
-    padding:20px;
+
+    padding:10px;
+
+    border:3px solid #000;
+
+    display:inline-block;
 }
 
-ul{
-    padding-left:20px;
+/* ===== SCROLLBAR PIXEL ===== */
+
+::-webkit-scrollbar{
+    width:16px;
 }
 
-li{
-    margin:8px 0;
+::-webkit-scrollbar-track{
+    background:#C8E6C9;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2E7D32;
+    border:2px solid #000;
 }

@@ -89,3 +89,17 @@ const visitantes =
 
 document.getElementById("contador").innerHTML =
     visitantes.toLocaleString("pt-BR");
+    header{
+    background:#ffd600;
+    border-bottom:8px solid #000;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    font-size:2rem;
+    color:#006400;
+
+    text-shadow:
+    4px 4px 0 #000;
+}
