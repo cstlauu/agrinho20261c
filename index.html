@@ -3,150 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AgroForte</title>
 
-<link rel="stylesheet" href="style.css">
+<title>AgroForte - Equilíbrio entre Produção e Meio Ambiente</title>
 
-<link href="https://fonts.googleapis.com/css2?family=VT323&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-
-    <h1>🌾 AGROFORTE 🌾</h1>
-
-    <p>Equilíbrio entre Produção e Meio Ambiente</p>
-
-    <button id="saibaMais">Explorar</button>
-
+    <h1>🌱 AGROFORTE 🌱</h1>
+    <p><strong>Equilíbrio entre Produção e Meio Ambiente</strong></p>
 </header>
 
-<nav>
-    <a href="#historia">História</a>
-    <a href="#tecnologia">Tecnologia</a>
-    <a href="#sustentabilidade">Sustentabilidade</a>
-    <a href="#quiz">Quiz</a>
-</nav>
+<div class="marquee">
+    <span>
+        🚜 Agricultura Sustentável • 🌎 Conservação Ambiental • 💧 Uso Inteligente da Água • 🌱 Futuro Verde para Todos 🚜
+    </span>
+</div>
 
-<section id="historia">
+<div class="container">
 
-    <h2>📜 Evolução do Campo</h2>
+    <div class="box">
+        <h2>📖 Sobre o AgroForte</h2>
 
-    <p>
-        A agricultura moderna evoluiu de métodos tradicionais para sistemas
-        altamente tecnológicos, aumentando a produção sem abandonar a
-        responsabilidade ambiental.
-    </p>
-
-</section>
-
-<section id="tecnologia">
-
-    <h2>🚜 Tecnologia Rural</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Agricultura de Precisão</h3>
-            <p>Uso de GPS e sensores.</p>
-        </div>
-
-        <div class="card">
-            <h3>Drones</h3>
-            <p>Monitoramento das plantações.</p>
-        </div>
-
-        <div class="card">
-            <h3>Automação</h3>
-            <p>Máquinas inteligentes.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="sustentabilidade">
-
-    <h2>🌱 Indicador Sustentável</h2>
-
-    <div class="barra">
-
-        <div id="progresso"></div>
-
-    </div>
-
-    <button onclick="aumentar()">Aplicar Boas Práticas</button>
-
-    <h3 id="valor">0%</h3>
-
-</section>
-
-<section>
-
-    <h2>🌎 Curiosidade Ambiental</h2>
-
-    <div class="curiosidade">
-
-        <p id="textoCuriosidade">
-            Clique para descobrir uma curiosidade.
+        <p>
+            O AgroForte representa uma visão moderna da agricultura:
+            produzir alimentos, fibras e energia sem comprometer os recursos
+            naturais das próximas gerações.
         </p>
+
+        <br>
+
+        <p>
+            O equilíbrio entre produção agrícola e preservação ambiental é um dos
+            maiores desafios do século XXI.
+        </p>
+
+        <br>
+
+        <span class="badge blink">SITE VINTAGE 90's</span>
+    </div>
+
+    <div class="box">
+        <h2>🌎 Práticas Sustentáveis</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>💧 Irrigação Inteligente</h3>
+                <p>Sensores ajudam a utilizar apenas a quantidade necessária de água.</p>
+            </div>
+
+            <div class="card">
+                <h3>🌱 Plantio Direto</h3>
+                <p>Reduz erosão do solo e mantém a matéria orgânica.</p>
+            </div>
+
+            <div class="card">
+                <h3>🐝 Biodiversidade</h3>
+                <p>A preservação de polinizadores aumenta a produtividade agrícola.</p>
+            </div>
+
+            <div class="card">
+                <h3>☀ Energia Renovável</h3>
+                <p>Painéis solares e biogás reduzem custos e emissões.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>📊 Evolução da Sustentabilidade</h2>
+
+        <div class="chart">
+            <div class="bar" style="height:35%">2010</div>
+            <div class="bar" style="height:55%">2015</div>
+            <div class="bar" style="height:75%">2020</div>
+            <div class="bar" style="height:95%">2025</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>🎯 Simulador de Sustentabilidade</h2>
+
+        <button onclick="simular()">Iniciar Simulação</button>
+
+        <div class="progress">
+            <div class="progress-bar" id="barra"></div>
+        </div>
+
+        <p id="textoSimulacao"></p>
+    </div>
+
+    <div class="box">
+        <h2>💡 Curiosidades do Agro</h2>
+
+        <div class="fact" id="curiosidade">
+            Clique no botão para descobrir uma curiosidade.
+        </div>
+
+        <br>
 
         <button onclick="novaCuriosidade()">
             Mostrar Curiosidade
         </button>
-
     </div>
 
-</section>
+    <div class="box">
+        <h2>🧠 Quiz Ambiental</h2>
 
-<section id="quiz">
+        <p>Qual prática ajuda a reduzir a erosão do solo?</p>
 
-    <h2>🎮 Quiz AgroForte</h2>
+        <br>
 
-    <p>
-        Qual prática ajuda mais na preservação do solo?
-    </p>
+        <label>
+            <input type="radio" name="quiz" value="0">
+            Queimada
+        </label>
 
-    <div class="quiz">
+        <br><br>
 
-        <button onclick="responder(false)">
+        <label>
+            <input type="radio" name="quiz" value="1">
+            Plantio Direto
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="radio" name="quiz" value="0">
             Desmatamento
+        </label>
+
+        <br><br>
+
+        <button onclick="corrigirQuiz()">
+            Ver Resultado
         </button>
 
-        <button onclick="responder(true)">
-            Rotação de culturas
-        </button>
-
-        <button onclick="responder(false)">
-            Queimadas
-        </button>
-
+        <div class="resultado" id="resultadoQuiz"></div>
     </div>
 
-    <h3 id="resultadoQuiz"></h3>
+    <div class="box">
+        <h2>📋 Benefícios da Agricultura Sustentável</h2>
 
-</section>
-
-<section>
-
-    <h2>📈 Produção Sustentável</h2>
-
-    <div class="contador">
-        <span id="contador">0</span>
-        hectares preservados
+        <ul>
+            <li>✔ Conservação dos recursos hídricos.</li>
+            <li>✔ Maior fertilidade do solo.</li>
+            <li>✔ Redução de emissões de carbono.</li>
+            <li>✔ Produção mais eficiente.</li>
+            <li>✔ Preservação da biodiversidade.</li>
+            <li>✔ Segurança alimentar para o futuro.</li>
+        </ul>
     </div>
 
-</section>
+    <div class="box">
+        <h2>👥 Visitantes</h2>
+
+        <p>Você é o visitante número:</p>
+
+        <div class="counter" id="contador"></div>
+    </div>
+
+</div>
 
 <footer>
-
-    <p>
-        AgroForte © 2025
-    </p>
-
+    <h3>🌱 AgroForte 1998 - Edição Retrô 🌱</h3>
+    <p>Produção e Meio Ambiente Caminhando Juntos</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>

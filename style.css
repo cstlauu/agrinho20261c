@@ -1,123 +1,200 @@
-body{
+*{
     margin:0;
-    background:#f5ecd7;
-    font-family:Montserrat,sans-serif;
-    color:#2c3e2d;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Verdana, Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(
+        45deg,
+        #008000,
+        #00cc66,
+        #66ff66,
+        #99ff99
+    );
+    background-size:400% 400%;
+    animation:bgMove 10s infinite alternate;
+    color:#000;
+}
+
+@keyframes bgMove{
+    from{
+        background-position:left;
+    }
+    to{
+        background-position:right;
+    }
 }
 
 header{
+    background:linear-gradient(to right,#ffcc00,#ff6600);
+    padding:20px;
     text-align:center;
-    padding:80px;
-    background:linear-gradient(
-    45deg,
-    #6b8e23,
-    #556b2f
-    );
-    color:white;
+    border-bottom:5px ridge #fff;
 }
 
 header h1{
-    font-family:'VT323', monospace;
-    font-size:5rem;
-    letter-spacing:4px;
+    font-size:3em;
+    color:#003300;
+    text-shadow:3px 3px yellow;
 }
 
-header button{
-    padding:15px 30px;
-    border:none;
-    background:#ffcc00;
-    cursor:pointer;
-    font-weight:bold;
-    box-shadow:4px 4px 0 black;
-}
-
-nav{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    background:#3f5f2a;
-    padding:15px;
-}
-
-nav a{
+.marquee{
+    background:#000080;
     color:white;
-    text-decoration:none;
+    padding:10px;
+    overflow:hidden;
+    white-space:nowrap;
 }
 
-section{
-    padding:50px;
+.marquee span{
+    display:inline-block;
+    padding-left:100%;
+    animation:scroll 15s linear infinite;
 }
 
-h2{
-    text-align:center;
+@keyframes scroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
 }
 
-.cards{
-    display:flex;
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.box{
+    background:white;
+    border:5px outset #ccc;
+    margin-bottom:20px;
+    padding:20px;
+    box-shadow:5px 5px 10px rgba(0,0,0,.3);
+}
+
+.box h2{
+    background:#006600;
+    color:white;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
-    justify-content:center;
-    flex-wrap:wrap;
 }
 
 .card{
-    width:250px;
-    background:white;
-    padding:20px;
-    border:3px solid #556b2f;
-    box-shadow:6px 6px 0 #999;
-}
-
-.barra{
-    width:80%;
-    height:35px;
-    background:#ddd;
-    margin:auto;
-    border:2px solid black;
-}
-
-#progresso{
-    width:0%;
-    height:100%;
-    background:#2ecc71;
-}
-
-#valor{
-    text-align:center;
-}
-
-.curiosidade{
-    text-align:center;
-}
-
-.quiz{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.quiz button{
+    background:#ffffcc;
+    border:3px solid #006600;
     padding:15px;
-    cursor:pointer;
-}
-
-.contador{
-    font-size:2rem;
-    text-align:center;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    background:#3f5f2a;
-    color:white;
-    padding:20px;
-}
-
-button{
     transition:.3s;
 }
 
-button:hover{
+.card:hover{
     transform:scale(1.05);
+    background:#ccffcc;
+}
+
+button{
+    background:#ff6600;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#cc3300;
+}
+
+.chart{
+    display:flex;
+    align-items:flex-end;
+    gap:20px;
+    height:250px;
+}
+
+.bar{
+    flex:1;
+    background:linear-gradient(
+        to top,
+        #006600,
+        #66ff66
+    );
+    color:white;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    padding-bottom:5px;
+}
+
+.progress{
+    background:#ddd;
+    height:30px;
+    margin-top:15px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0;
+    background:limegreen;
+    transition:1s;
+}
+
+.fact{
+    padding:15px;
+    background:#eaffea;
+    border-left:5px solid green;
+}
+
+.resultado{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.counter{
+    font-size:1.6rem;
+    color:red;
+    font-weight:bold;
+}
+
+.badge{
+    background:red;
+    color:white;
+    padding:5px 10px;
+    border-radius:5px;
+}
+
+.blink{
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+footer{
+    background:#003300;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin:8px 0;
 }

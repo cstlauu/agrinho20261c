@@ -1,100 +1,91 @@
-document.getElementById("saibaMais")
-.addEventListener("click", () => {
-
-    document
-    .getElementById("historia")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-});
-
-let progresso = 0;
-
-function aumentar(){
-
-    if(progresso < 100){
-
-        progresso += 10;
-
-        document
-        .getElementById("progresso")
-        .style.width = progresso + "%";
-
-        document
-        .getElementById("valor")
-        .innerHTML = progresso + "%";
-
-    }
-
-}
-
 const curiosidades = [
-
-"🌱 Uma árvore pode absorver até 22 kg de CO₂ por ano.",
-
-"🚜 Agricultura de precisão reduz desperdícios de insumos.",
-
-"💧 Sistemas modernos economizam até 50% de água.",
-
-"🌾 Rotação de culturas melhora a fertilidade do solo.",
-
-"🐝 Polinizadores são essenciais para grande parte da produção agrícola."
-
+    "🌎 Cerca de 95% dos alimentos dependem do solo para serem produzidos.",
+    "💧 A irrigação eficiente pode economizar até 50% da água utilizada.",
+    "🐝 Mais de 70% das culturas agrícolas dependem de polinizadores.",
+    "🌱 O plantio direto ajuda a armazenar carbono no solo.",
+    "☀ Fazendas solares estão crescendo em áreas rurais do mundo todo."
 ];
 
-function novaCuriosidade(){
+function novaCuriosidade() {
 
-    let sorteio =
-    Math.floor(
-        Math.random() *
-        curiosidades.length
-    );
+    const aleatoria =
+        curiosidades[
+            Math.floor(
+                Math.random() * curiosidades.length
+            )
+        ];
 
-    document
-    .getElementById("textoCuriosidade")
-    .innerHTML =
-    curiosidades[sorteio];
-
+    document.getElementById("curiosidade").innerHTML =
+        aleatoria;
 }
 
-function responder(correto){
+function corrigirQuiz() {
 
-    let resultado =
-    document.getElementById("resultadoQuiz");
+    const resposta =
+        document.querySelector(
+            'input[name="quiz"]:checked'
+        );
 
-    if(correto){
+    if (!resposta) {
 
-        resultado.innerHTML =
-        "✅ Correto! A rotação de culturas preserva o solo.";
+        document.getElementById("resultadoQuiz")
+            .innerHTML =
+            "Escolha uma alternativa!";
 
-        resultado.style.color = "green";
-
-    }else{
-
-        resultado.innerHTML =
-        "❌ Resposta incorreta.";
-
-        resultado.style.color = "red";
-
+        return;
     }
 
+    if (resposta.value === "1") {
+
+        document.getElementById("resultadoQuiz")
+            .innerHTML =
+            "✅ Correto! O plantio direto reduz a erosão.";
+
+    } else {
+
+        document.getElementById("resultadoQuiz")
+            .innerHTML =
+            "❌ Resposta incorreta.";
+    }
 }
 
-let numero = 0;
+function simular() {
 
-const contador = setInterval(() => {
+    const barra =
+        document.getElementById("barra");
 
-    numero += 50;
+    const texto =
+        document.getElementById("textoSimulacao");
 
-    document
-    .getElementById("contador")
-    .innerHTML = numero;
+    let progresso = 0;
 
-    if(numero >= 5000){
+    barra.style.width = "0%";
 
-        clearInterval(contador);
+    const intervalo = setInterval(() => {
 
-    }
+        progresso += 5;
 
-}, 30);
+        barra.style.width =
+            progresso + "%";
+
+        texto.innerHTML =
+            "Sustentabilidade da fazenda: " +
+            progresso +
+            "%";
+
+        if (progresso >= 100) {
+
+            clearInterval(intervalo);
+
+            texto.innerHTML =
+                "🌱 Fazenda sustentável alcançada com sucesso!";
+        }
+
+    }, 100);
+}
+
+const visitantes =
+    Math.floor(Math.random() * 90000) + 10000;
+
+document.getElementById("contador").innerHTML =
+    visitantes.toLocaleString("pt-BR");
