@@ -1,167 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AgroForte - Equilíbrio entre Produção e Meio Ambiente</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agroforte e Sustentável</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Agroforte e Sustentável</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="top-bar">
-    🌱 AGROFORTE ONLINE - DESDE 1998 🌱
-</div>
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Promovemos práticas agrícolas fortes e sustentáveis, respeitando o meio ambiente e garantindo alimentos de qualidade.</p>
+    </section>
 
-<header>
-    <h1>🚜 AGROFORTE 🚜</h1>
-    <p>Equilíbrio entre Produção e Meio Ambiente</p>
-</header>
+    <section id="projetos">
+        <h2>Nossos Projetos</h2>
+        <div class="projeto-card" onclick="mostrarDetalhes('Projeto de Agrofloresta')">
+            <h3>Agrofloresta</h3>
+            <p>Integração de culturas com árvores, aumentando a biodiversidade e produtividade.</p>
+        </div>
+        <div class="projeto-card" onclick="mostrarDetalhes('Projeto de Compostagem')">
+            <h3>Compostagem</h3>
+            <p>Transformamos resíduos orgânicos em fertilizantes naturais e ricos em nutrientes.</p>
+        </div>
+    </section>
 
-<section class="hero">
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="contatoForm">
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="email" id="email" placeholder="Seu email" required>
+            <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
-    <div>
-        <h2>Produzir Mais, Preservar Melhor</h2>
+    <footer>
+        <p>&copy; 2026 Agroforte e Sustentável. Todos os direitos reservados.</p>
+    </footer>
 
-        <p>
-            A agricultura moderna pode aumentar a produção de alimentos
-            sem comprometer os recursos naturais das futuras gerações.
-        </p>
-
-        <button onclick="mostrarMensagem()">
-            Descobrir Mais
-        </button>
-
-    </div>
-
-</section>
-
-<section class="cards">
-
-    <div class="card">
-        <h3>💧 Água</h3>
-        <p>
-            Sistemas inteligentes economizam até 50% de água.
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>🌱 Solo</h3>
-        <p>
-            O plantio direto reduz erosão e melhora a fertilidade.
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>🐝 Biodiversidade</h3>
-        <p>
-            Preservar polinizadores aumenta a produtividade.
-        </p>
-    </div>
-
-</section>
-
-<section class="indicadores">
-
-    <h2>📊 Indicadores AgroForte</h2>
-
-    <div class="contador">
-        <span id="agua">0</span>
-        <p>Litros Economizados</p>
-    </div>
-
-    <div class="contador">
-        <span id="carbono">0</span>
-        <p>Kg de CO₂ Evitados</p>
-    </div>
-
-    <div class="contador">
-        <span id="arvores">0</span>
-        <p>Árvores Preservadas</p>
-    </div>
-
-</section>
-
-<section class="simulador">
-
-    <h2>🚜 Simulador de Sustentabilidade</h2>
-
-    <p>Invista em ações sustentáveis:</p>
-
-    <button onclick="adicionarPontos(10)">
-        Irrigação Inteligente
-    </button>
-
-    <button onclick="adicionarPontos(15)">
-        Energia Solar
-    </button>
-
-    <button onclick="adicionarPontos(20)">
-        Preservação de Nascentes
-    </button>
-
-    <div class="barra">
-        <div id="progresso"></div>
-    </div>
-
-    <h3 id="nivel">
-        Sustentabilidade: 0%
-    </h3>
-
-</section>
-
-<section class="curiosidades">
-
-    <h2>💡 Curiosidades</h2>
-
-    <p id="curiosidade">
-        Clique para descobrir uma curiosidade.
-    </p>
-
-    <button onclick="novaCuriosidade()">
-        Nova Curiosidade
-    </button>
-
-</section>
-
-<section class="quiz">
-
-    <h2>🧠 Quiz Ambiental</h2>
-
-    <p>
-        Qual prática ajuda a conservar o solo?
-    </p>
-
-    <label>
-        <input type="radio" name="quiz" value="0">
-        Queimada
-    </label>
-
-    <label>
-        <input type="radio" name="quiz" value="1">
-        Plantio Direto
-    </label>
-
-    <label>
-        <input type="radio" name="quiz" value="0">
-        Desmatamento
-    </label>
-
-    <button onclick="corrigirQuiz()">
-        Responder
-    </button>
-
-    <p id="resultado"></p>
-
-</section>
-
-<footer>
-    <h3>🌎 AgroForte 1998-2026</h3>
-    <p>Produção e Meio Ambiente Caminhando Juntos</p>
-</footer>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
