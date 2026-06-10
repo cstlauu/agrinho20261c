@@ -3,50 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agroforte e Sustentável</title>
+    <title>Agroforte & Sustentável</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header>
-        <h1>Agroforte e Sustentável</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="container navbar">
+            <div class="logo">
+                🌱 Agroforte
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Promovemos práticas agrícolas fortes e sustentáveis, respeitando o meio ambiente e garantindo alimentos de qualidade.</p>
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>O futuro do agro é sustentável.</h1>
+                <p>
+                    Tecnologia, produtividade e respeito ao meio ambiente
+                    trabalhando juntos para transformar o campo.
+                </p>
+
+                <button id="btnSaibaMais" class="btn">
+                    Saiba Mais
+                </button>
+            </div>
+        </div>
     </section>
 
-    <section id="projetos">
-        <h2>Nossos Projetos</h2>
-        <div class="projeto-card" onclick="mostrarDetalhes('Projeto de Agrofloresta')">
-            <h3>Agrofloresta</h3>
-            <p>Integração de culturas com árvores, aumentando a biodiversidade e produtividade.</p>
-        </div>
-        <div class="projeto-card" onclick="mostrarDetalhes('Projeto de Compostagem')">
-            <h3>Compostagem</h3>
-            <p>Transformamos resíduos orgânicos em fertilizantes naturais e ricos em nutrientes.</p>
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Quem Somos</h2>
+
+            <p>
+                A Agroforte promove práticas agrícolas modernas,
+                sustentáveis e eficientes. Nosso objetivo é unir inovação,
+                preservação ambiental e crescimento econômico para gerar
+                resultados duradouros no campo.
+            </p>
         </div>
     </section>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <form id="contatoForm">
-            <input type="text" id="nome" placeholder="Seu nome" required>
-            <input type="email" id="email" placeholder="Seu email" required>
-            <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+    <section id="solucoes" class="solucoes">
+        <div class="container">
+            <h2>Nossas Soluções</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icone">🌿</div>
+                    <h3>Agricultura Sustentável</h3>
+                    <p>
+                        Métodos que reduzem impactos ambientais e aumentam
+                        a produtividade.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">💧</div>
+                    <h3>Gestão Hídrica</h3>
+                    <p>
+                        Uso inteligente da água para garantir eficiência e
+                        preservação dos recursos naturais.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">🚜</div>
+                    <h3>Tecnologia no Campo</h3>
+                    <p>
+                        Soluções digitais e monitoramento para tomada de
+                        decisões mais precisas.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <div class="container">
+
+            <h2>Entre em Contato</h2>
+
+            <form id="formContato">
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Seu nome"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Seu e-mail"
+                    required
+                >
+
+                <textarea
+                    id="mensagem"
+                    rows="5"
+                    placeholder="Sua mensagem"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Enviar Mensagem
+                </button>
+
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Agroforte e Sustentável. Todos os direitos reservados.</p>
+        <div class="container">
+            <p>
+                © 2026 Agroforte & Sustentável • Todos os direitos reservados.
+            </p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
